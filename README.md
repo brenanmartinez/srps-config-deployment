@@ -10,18 +10,42 @@ This repository contains utilities for setting export flags on transaction defin
 
 ## Quick Start
 
+### Prerequisites
+
+Before using this tool, you need to prepare a **transaction codes input file** containing the transaction definition codes you want to export. 
+
+**Format Requirements:**
+- One transaction code per line
+- Format: `transactionDefinition.{codeName}`
+- Example: `transactionDefinition.licensedArchitectInitialApplication`
+
+**Example input file** (`my_transactions.txt`):
+```
+transactionDefinition.licensedArchitectInitialApplication
+transactionDefinition.licensedEngineerRenewal
+transactionDefinition.licensedSurveyorEndorsement
+```
+
+See [examples/sample_transaction_codes.txt](examples/sample_transaction_codes.txt) for a complete example.
+
+### Running the Tool
+
 ```bash
-# Clone the repository
+# 1. Clone the repository
 git clone https://github.com/brenanmartinez/srps-config-deployment.git
 cd srps-config-deployment
 
-# Run the export flag generator
-./scripts/generate_export_flag_script.sh transaction_codes.txt > export_flags.sql
+# 2. Create your transaction codes file
+nano my_transactions.txt
+# (Add your transaction codes, one per line)
 
-# Review the generated SQL
+# 3. Run the export flag generator
+./scripts/generate_export_flag_script.sh my_transactions.txt > export_flags.sql
+
+# 4. Review the generated SQL
 less export_flags.sql
 
-# Apply to your environment (after review!)
+# 5. Apply to your environment (after review!)
 sqlcmd -S your-server -d your-database -i export_flags.sql
 ```
 
@@ -32,12 +56,12 @@ sqlcmd -S your-server -d your-database -i export_flags.sql
   - `validate_transaction_codes.sh` - Transaction code format validator
   
 - **[docs/](docs/)** - Documentation
-  - `USAGE_GUIDE.md` - Detailed usage instructions
+  - **[USAGE_GUIDE.md](docs/USAGE_GUIDE.md)** - 📖 **Start here!** Detailed usage instructions
   - `GITHUB_INTEGRATION_PLAN.md` - Future GitHub Actions automation plan
   - `TRANSACTION_CODE_REFERENCE.md` - Common transaction codes
 
 - **[examples/](examples/)** - Example files
-  - Sample transaction code lists
+  - **[sample_transaction_codes.txt](examples/sample_transaction_codes.txt)** - Example input file format
   - Sample output SQL scripts
 
 ## What Are Export Flags?

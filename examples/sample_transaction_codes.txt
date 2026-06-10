@@ -1,0 +1,30 @@
+# Sample Transaction Codes for SRPS Export Flag Automation
+#
+# This file demonstrates the required format for transaction code input files.
+# Each line should contain one transaction definition code in the format:
+# transactionDefinition.{codeName}
+#
+# Lines starting with # are comments and will be ignored by the script.
+# Blank lines are also ignored.
+#
+# Replace these sample codes with your actual transaction definition codes.
+
+# Licensed Architect Transactions
+transactionDefinition.licensedArchitectInitialApplication
+transactionDefinition.licensedArchitectRenewal
+transactionDefinition.licensedArchitectEndorsement
+transactionDefinition.licensedArchitectReinstatement
+
+# Licensed Engineer Transactions
+transactionDefinition.licensedEngineerInitialApplication
+transactionDefinition.licensedEngineerRenewal
+transactionDefinition.licensedEngineerEndorsement
+
+# Licensed Surveyor Transactions
+transactionDefinition.licensedSurveyorInitialApplication
+transactionDefinition.licensedSurveyorRenewal
+transactionDefinition.licensedSurveyorEndorsement
+
+# Additional Professional License Types
+transactionDefinition.structuralEngineerInitialApplication
+transactionDefinition.structuralEngineerRenewal
