@@ -46,6 +46,13 @@ nano my_transactions.txt
 less export_flags.sql
 
 # 5. Apply to your environment (after review!)
+# Note: Requires SQL Server connection. Options:
+#   A. SQL Server Management Studio (SSMS) - recommended
+#   B. Azure Data Studio with SQL Server extension
+#   C. VS Code with mssql extension (requires setup)
+#   D. sqlcmd CLI (if SQL Server tools installed)
+
+# Example using sqlcmd (if available):
 sqlcmd -S your-server -d your-database -i export_flags.sql
 ```
 
@@ -84,6 +91,7 @@ Export flags (C_EXPORT column) are boolean flags in entellitrak configuration ta
 
 The generator updates export flags in:
 - `T_PSO_TRANSACTION_DEFINITION` - Transaction definitions
+- `T_PSO_TRANSACTION_TYPE` - Transaction types (Initial, Renewal, etc.)
 - `T_PSO_FEE_DEFINITION` - Fee definitions
 - `T_PSO_REVENUE_CODE` - Revenue codes
 - `T_PSO_RULE_DEFINITION` - Business rules
