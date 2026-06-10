@@ -1,0 +1,33 @@
+# Sensitive files
+*.sql
+credentials.txt
+api_keys.txt
+*.env
+.env.*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Output files (user-generated)
+output/
+generated/
+
+# Keep example SQL files
+!examples/*.sql
